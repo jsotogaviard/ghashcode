@@ -12,33 +12,33 @@ package com.trio.input;
  */
 public class Server implements Comparable<Server>{
 	
+	public int id;
 	public int size;
 	public int capacity;
 	/** Constructor
 	 * @param size
 	 * @param capacity
 	 */
-	public Server(int size, int capacity) {
+	public Server(int id, int size, int capacity) {
 		super();
+		this.id  = id;
 		this.size = size;
 		this.capacity = capacity;
 	}
 	@Override
 	public int compareTo(Server o) {
 		if(this.capacity - o.capacity < 0){
-			return -1;
-		} else if(this.capacity - o.capacity > 0){
 			return 1;
+		} else if(this.capacity - o.capacity > 0){
+			return -1;
 		} else {
 			return 0;
 		}
 	}
+
 	@Override
 	public String toString() {
-		return "Server [size=" + this.size + ", capacity=" + this.capacity
-				+ "]";
+		return "Server [id=" + id + ", size=" + size + ", capacity=" + capacity + "]";
 	}
 	
-	
-
 }
